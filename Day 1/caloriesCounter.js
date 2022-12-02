@@ -21,12 +21,12 @@ fs.readFile('./caloriesData.txt', 'utf8', (err, data) => {
         } else {
             // If the element hasn't value, it means that is a empty line, so push the counter value at array
             sortedList.push(amountValue);
-            // Sort the array in descending order
-            sortedList.sort((a, b) => a - b).reverse();
             // Reset the counter
             amountValue = 0;
         }
     });
+    // Sort the array in descending order
+    sortedList.sort((a, b) => a - b).reverse();
     // RESULT: (**Part one**) Get the first element of the array (The big one) checking before if the list has values
     sortedList.length && console.log("Elve with maximum calories: " + sortedList[0])
     // RESULT: (**Part two**) Get the three first elements of the array and add them checking before if the list has values
